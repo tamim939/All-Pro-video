@@ -111,6 +111,13 @@ export default function App() {
     showToast('ভিডিও প্লে হচ্ছে!');
   };
 
+  const handleShare = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      showToast('লিঙ্ক কপি হয়েছে!');
+    });
+  };
+
   useEffect(() => {
     const handlePopState = () => {
       const hash = window.location.hash;
@@ -128,7 +135,7 @@ export default function App() {
     };
 
     window.addEventListener('hashchange', handlePopState);
-    // handlePopState(); // Initial check - disabled to always start on home page
+    handlePopState(); // Re-enabled to allow sharing links to specific posts
 
     return () => window.removeEventListener('hashchange', handlePopState);
   }, []);
@@ -218,13 +225,23 @@ export default function App() {
           className="px-0 sm:px-4 py-6 md:py-10 max-w-2xl mx-auto"
         >
           <div className="px-4 mb-4">
-            <button 
-              onClick={handleBack}
-              className="flex items-center gap-2 text-neutral-500 font-bold text-sm bg-neutral-100 px-4 py-2.5 rounded-2xl hover:bg-neutral-200 transition-colors"
-            >
-              <ChevronLeft size={18} />
-              ফিরে যান
-            </button>
+            <div className="flex items-center justify-between gap-4 mb-4">
+              <button 
+                onClick={handleBack}
+                className="flex items-center gap-2 text-neutral-500 font-bold text-sm bg-neutral-100 px-4 py-2.5 rounded-2xl hover:bg-neutral-200 transition-colors"
+              >
+                <ChevronLeft size={18} />
+                ফিরে যান
+              </button>
+              
+              <button 
+                onClick={handleShare}
+                className="flex items-center gap-2 text-neutral-600 font-bold text-sm bg-neutral-100 px-4 py-2.5 rounded-2xl hover:bg-neutral-200 transition-colors border border-transparent active:border-neutral-300"
+              >
+                <Share2 size={18} />
+                লিঙ্ক কপি করুন
+              </button>
+            </div>
           </div>
 
           <div className="bg-white rounded-t-[3rem] sm:rounded-[3rem] p-4 sm:p-8">
