@@ -81,18 +81,15 @@ export default function App() {
   }, []);
 
   const handlePostClick = (post: Post) => {
-    // 1. First, navigate into the post detail view
+    // 1. Prepare history state so 'Back' navigation lands on the detail page
     setSelectedPost(post);
     setPage('detail');
     setDownloadStep(0);
     window.location.hash = `post=${post.id}`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // 2. ONLY redirect if this post ID hasn't been redirected in this session yet
-    if (!redirectedPostIds.includes(post.id)) {
-      setShouldRedirect(true);
-      setRedirectedPostIds(prev => [...prev, post.id]);
-    }
+    // 2. Immediate redirect to the link
+    // Using simple redirect ensuring it's not blocked
+    window.location.href = post.link;
   };
 
   // Automatic redirect effect
