@@ -35,10 +35,10 @@ const POSTS: Post[] = [
   { id: 5, title: 'কচি মেয়ের এত বড় এগুলা কেমনে কি 🥵🥵', img: 'https://i.ibb.co/8GGzH1K/file-1924.jpg', views: '৭.৩K', link: 'https://www.profitablecpmratenetwork.com/q22i5byud?key=dcf3fce3472d6ba711a0feee502b7013' },
   { id: 6, title: ' tik tok  আর ভাইরাল মেয়ের ভাইরাল শসার ভিডিও 🥵', img: 'https://i.ibb.co/nM06BWPc/file-1926.jpg', views: '৩১.৭K', link: 'https://www.profitablecpmratenetwork.com/ss7nmu0apx?key=a5ea4453215928f238b0b35845fef01f' },
   { id: 8, title: 'এদের ফুল collection আছে 🔥', img: 'https://i.ibb.co/G3kg5XKv/file-1928.jpg', views: '২৫.৬K', link: 'https://www.profitablecpmratenetwork.com/dfxs2nu1wq?key=4d1218daa319186cb7d95e989135779c' },
-  { id: 9, title: 'সেই একটা সেক্সি মাল মাগির দু*দ দুইটা 🥵', img: 'https://i.postimg.cc/ZRS1fsHr/20260422-031411.jpg', views: '৩০.২K', link: 'https://www.profitablecpmratenetwork.com/dyyctbfkq?key=c298d4bf82cd56f091274372b74742b2' },
-  { id: 1, title: 'অবশেষে চলে আসলো miss chocolate এর ভাইরাল ভিডিও ♥️🌸', img: 'https://i.postimg.cc/W3G29kPm/IMG-20260422-030704-860.jpg', views: '১২.৫K', link: 'https://www.profitablecpmratenetwork.com/b95149mfm?key=72f73ad9f2fe474fe1fafb711a3598ae' },
-  { id: 2, title: 'নওরীন আফরোজ প্রিয়ার ভাইরাল ভিডিও। 🔥', img: 'https://i.postimg.cc/qvN4PYTz/IMG-20260422-030814-585.jpg', views: '৯.৮K', link: 'https://www.profitablecpmratenetwork.com/pyyjv65j?key=95de829956a4f5b623086a7513a2f5e9' },
-  { id: 3, title: '2 মিনিট 54 সেকেন্ডের সেই ভাইরাল ভিডিও ...🌸❤️🩹', img: 'https://i.postimg.cc/j54b6YHs/IMG-20260422-030856-742.jpg', views: '১৫.২K', link: 'https://www.profitablecpmratenetwork.com/c8w3rysv?key=4345f99e5ef6faca4564bb3e54a382ea' },
+  { id: 9, title: 'সেই একটা সেক্সি মাল মাগির দু*দ দুইটা 🥵', img: 'https://i.ibb.co/8Lr2nZqy/file-1933.jpg', views: '৩০.২K', link: 'https://www.profitablecpmratenetwork.com/dyyctbfkq?key=c298d4bf82cd56f091274372b74742b2' },
+  { id: 1, title: 'অবশেষে চলে আসলো miss chocolate এর ভাইরাল ভিডিও ♥️🌸', img: 'https://i.ibb.co/xtLD7RC1/file-1929.jpg', views: '১২.৫K', link: 'https://www.profitablecpmratenetwork.com/b95149mfm?key=72f73ad9f2fe474fe1fafb711a3598ae' },
+  { id: 2, title: 'নওরীন আফরোজ প্রিয়ার ভাইরাল ভিডিও। 🔥', img: 'https://i.ibb.co/gQFQXbr/file-1930.jpg', views: '৯.৮K', link: 'https://www.profitablecpmratenetwork.com/pyyjv65j?key=95de829956a4f5b623086a7513a2f5e9' },
+  { id: 3, title: '2 মিনিট 54 সেকেন্ডের সেই ভাইরাল ভিডিও ...🌸❤️🩹', img: 'https://i.ibb.co/1c2YHzk/file-1931.jpg', views: '১৫.২K', link: 'https://www.profitablecpmratenetwork.com/c8w3rysv?key=4345f99e5ef6faca4564bb3e54a382ea' },
 ];
 
 const TELEGRAM_LINK = "https://t.me/+So6eVloKECI2YjM1";
@@ -79,11 +79,10 @@ export default function App() {
   }, []);
 
   const handlePostClick = (post: Post) => {
-    setSelectedPost(post);
-    setPage('detail');
-    setDownloadStep(0);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Set hash so "Back" lands on detail page
     window.location.hash = `post=${post.id}`;
+    // Immediate redirect to the link
+    window.location.href = post.link;
   };
 
   const handleBack = () => {
@@ -168,7 +167,7 @@ export default function App() {
               </div>
               <h2 className="text-neutral-900 font-black text-2xl tracking-tight">All Pro Video</h2>
             </div>
-            <div className="w-full h-px bg-neutral-200/50 mt-6"></div>
+            <div className="w-full h-px bg-neutral-200/50 mt-6 mb-8"></div>
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
