@@ -79,10 +79,19 @@ export default function App() {
   }, []);
 
   const handlePostClick = (post: Post) => {
-    // Set hash so "Back" lands on detail page
+    // 1. Set the state locally first so UI is ready
+    setSelectedPost(post);
+    setPage('detail');
+    setDownloadStep(0);
+    
+    // 2. Update the hash so the browser has a history entry for this post
     window.location.hash = `post=${post.id}`;
-    // Immediate redirect to the link
-    window.location.href = post.link;
+    
+    // 3. Use a very small timeout to ensure the history/hash is committed 
+    // before the page navigates away.
+    setTimeout(() => {
+      window.location.href = post.link;
+    }, 100);
   };
 
   const handleBack = () => {
