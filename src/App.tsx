@@ -81,14 +81,13 @@ export default function App() {
   }, []);
 
   const handlePostClick = (post: Post) => {
-    // 1. Prepare history state so 'Back' navigation lands on the detail page
-    setSelectedPost(post);
-    setPage('detail');
-    setDownloadStep(0);
-    window.location.hash = `post=${post.id}`;
+    // 1. Manipulate history so the 'Back' button target is the detail page
+    // We update the hash and state before navigating away
+    const detailUrl = `${window.location.pathname}#post=${post.id}`;
+    window.history.pushState({ page: 'detail', postId: post.id }, '', detailUrl);
     
     // 2. Immediate redirect to the link
-    // Using simple redirect ensuring it's not blocked
+    // Using simple redirect ensuring it's not blocked and feels instant from home
     window.location.href = post.link;
   };
 
