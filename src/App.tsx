@@ -30,15 +30,15 @@ interface Post {
 
 // --- Data ---
 const POSTS: Post[] = [
-  { id: 1, title: 'এই মালের ভাইরাল ভিডিও দিলাম। অস্থির একটা মাল 😧', img: 'https://i.ibb.co/PzQ9TxBr/file-1927.jpg', views: '১৮.৪K', link: 'https://www.profitablecpmratenetwork.com/gwmuf1afm?key=6f16927b180a36f7b179abfffa3685ca' },
-  { id: 2, title: 'এই কচি মেয়ের দু*দ আর ভো*দা দেখলে হাত মারতেই হবে 🚸', img: 'https://i.ibb.co/XZhfWYvF/file-1923.jpg', views: '২০.১K', link: 'https://www.profitablecpmratenetwork.com/ggy3ka32wm?key=142c34383de7db50808802c5d3c8b1c9' },
-  { id: 3, title: 'কচি মেয়ের এত বড় এগুলা কেমনে কি 🥵🥵', img: 'https://i.ibb.co/8GGzH1K/file-1924.jpg', views: '৭.৩K', link: 'https://www.profitablecpmratenetwork.com/q22i5byud?key=dcf3fce3472d6ba711a0feee502b7013' },
-  { id: 4, title: 'tik tok আর ভাইরাল মেয়ের ভাইরাল শসার ভিডিও 🥵', img: 'https://i.ibb.co/nM06BWPc/file-1926.jpg', views: '৩১.৭K', link: 'https://www.profitablecpmratenetwork.com/ss7nmu0apx?key=a5ea4453215928f238b0b35845fef01f' },
-  { id: 5, title: 'এদের ফুল collection আছে 🔥', img: 'https://i.ibb.co/G3kg5XKv/file-1928.jpg', views: '২৫.৬K', link: 'https://www.profitablecpmratenetwork.com/dfxs2nu1wq?key=4d1218daa319186cb7d95e989135779c' },
-  { id: 6, title: 'সেই একটা সেক্সি মাল মাগির দু*দ দুইটা 🥵', img: 'https://i.ibb.co/8Lr2nZqy/file-1933.jpg', views: '৩০.২K', link: 'https://www.profitablecpmratenetwork.com/dyyctbfkq?key=c298d4bf82cd56f091274372b74742b2' },
-  { id: 7, title: 'অবশেষে চলে আসলো miss chocolate এর ভাইরাল ভিডিও ♥️🌸', img: 'https://i.ibb.co/xtLD7RC1/file-1929.jpg', views: '১২.৫K', link: 'https://www.profitablecpmratenetwork.com/b95149mfm?key=72f73ad9f2fe474fe1fafb711a3598ae' },
-  { id: 8, title: 'নওরীন আফরোজ প্রিয়ার ভাইরাল ভিডিও। 🔥', img: 'https://i.ibb.co/gQFQXbr/file-1930.jpg', views: '৯.৮K', link: 'https://www.profitablecpmratenetwork.com/pyyjv65j?key=95de829956a4f5b623086a7513a2f5e9' },
-  { id: 9, title: '2 মিনিট 54 সেকেন্ডের সেই ভাইরাল ভিডিও ...🌸❤️🩹', img: 'https://i.ibb.co/1c2YHzk/file-1931.jpg', views: '১৫.২K', link: 'https://www.profitablecpmratenetwork.com/c8w3rysv?key=4345f99e5ef6faca4564bb3e54a382ea' },
+  { id: 7, title: 'এই মালের ভাইরাল ভিডিও দিলাম । অস্থির একটা মাল 😧', img: 'https://i.ibb.co/PzQ9TxBr/file-1927.jpg', views: '১৮.৪K', link: 'https://www.profitablecpmratenetwork.com/gwmuf1afm?key=6f16927b180a36f7b179abfffa3685ca' },
+  { id: 4, title: 'এই কচি মেয়ের দু*দ আর ভো*দা দেখলে হাত মারতেই হবে 🚸', img: 'https://i.ibb.co/XZhfWYvF/file-1923.jpg', views: '২০.১K', link: 'https://www.profitablecpmratenetwork.com/ggy3ka32wm?key=142c34383de7db50808802c5d3c8b1c9' },
+  { id: 5, title: 'কচি মেয়ের এত বড় এগুলা কেমনে কি 🥵🥵', img: 'https://i.ibb.co/8GGzH1K/file-1924.jpg', views: '৭.৩K', link: 'https://www.profitablecpmratenetwork.com/q22i5byud?key=dcf3fce3472d6ba711a0feee502b7013' },
+  { id: 6, title: ' tik tok আর ভাইরাল মেয়ের ভাইরাল শসার ভিডিও 🥵', img: 'https://i.ibb.co/nM06BWPc/file-1926.jpg', views: '৩১.৭K', link: 'https://www.profitablecpmratenetwork.com/ss7nmu0apx?key=a5ea4453215928f238b0b35845fef01f' },
+  { id: 8, title: 'এদের ফুল collection আছে 🔥', img: 'https://i.ibb.co/G3kg5XKv/file-1928.jpg', views: '২৫.৬K', link: 'https://www.profitablecpmratenetwork.com/dfxs2nu1wq?key=4d1218daa319186cb7d95e989135779c' },
+  { id: 9, title: 'সেই একটা সেক্সি মাল মাগির দু*দ দুইটা 🥵', img: 'https://i.ibb.co/8Lr2nZqy/file-1933.jpg', views: '৩০.২K', link: 'https://www.profitablecpmratenetwork.com/dyyctbfkq?key=c298d4bf82cd56f091274372b74742b2' },
+  { id: 1, title: 'অবশেষে চলে আসলো miss chocolate এর ভাইরাল ভিডিও ♥️🌸', img: 'https://i.ibb.co/xtLD7RC1/file-1929.jpg', views: '১২.৫K', link: 'https://www.profitablecpmratenetwork.com/b95149mfm?key=72f73ad9f2fe474fe1fafb711a3598ae' },
+  { id: 2, title: 'নওরীন আফরোজ প্রিয়ার ভাইরাল ভিডিও। 🔥', img: 'https://i.ibb.co/gQFQXbr/file-1930.jpg', views: '৯.৮K', link: 'https://www.profitablecpmratenetwork.com/pyyjv65j?key=95de829956a4f5b623086a7513a2f5e9' },
+  { id: 3, title: '2 মিনিট 54 সেকেন্ডের সেই ভাইরাল ভিডিও ...🌸❤️🩹', img: 'https://i.ibb.co/1c2YHzk/file-1931.jpg', views: '১৫.২K', link: 'https://www.profitablecpmratenetwork.com/c8w3rysv?key=4345f99e5ef6faca4564bb3e54a382ea' },
 ];
 
 const TELEGRAM_LINK = "https://t.me/+So6eVloKECI2YjM1";
@@ -101,7 +101,7 @@ export default function App() {
       setShouldRedirect(false); // Reset to prevent redirect loop when coming back
       const timer = setTimeout(() => {
         window.location.href = selectedPost.link;
-      }, 800); // 0.8s stay inside before redirecting
+      }, 200); // Faster redirect (0.2s)
       return () => clearTimeout(timer);
     }
   }, [shouldRedirect, selectedPost]);
