@@ -74,6 +74,7 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [downloadStep, setDownloadStep] = useState(0);
   const [shouldRedirect, setShouldRedirect] = useState(false);
+  const [redirectedPostIds, setRedirectedPostIds] = useState<number[]>([]);
 
   const showToast = useCallback((msg: string) => {
     setToastMessage(msg);
@@ -87,8 +88,11 @@ export default function App() {
     window.location.hash = `post=${post.id}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // 2. Set the flag to redirect now that we are "inside"
-    setShouldRedirect(true);
+    // 2. ONLY redirect if this post ID hasn't been redirected in this session yet
+    if (!redirectedPostIds.includes(post.id)) {
+      setShouldRedirect(true);
+      setRedirectedPostIds(prev => [...prev, post.id]);
+    }
   };
 
   // Automatic redirect effect
