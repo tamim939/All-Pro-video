@@ -73,34 +73,18 @@ export default function App() {
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [downloadStep, setDownloadStep] = useState(0);
-  const [shouldRedirect, setShouldRedirect] = useState(false);
-  const [redirectedPostIds, setRedirectedPostIds] = useState<number[]>([]);
 
   const showToast = useCallback((msg: string) => {
     setToastMessage(msg);
   }, []);
 
   const handlePostClick = (post: Post) => {
-    // 1. Manipulate history so the 'Back' button target is the detail page
-    // We update the hash and state before navigating away
-    const detailUrl = `${window.location.pathname}#post=${post.id}`;
-    window.history.pushState({ page: 'detail', postId: post.id }, '', detailUrl);
-    
-    // 2. Immediate redirect to the link
-    // Using simple redirect ensuring it's not blocked and feels instant from home
-    window.location.href = post.link;
+    setSelectedPost(post);
+    setPage('detail');
+    setDownloadStep(0);
+    window.location.hash = `post=${post.id}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  // Automatic redirect effect
-  useEffect(() => {
-    if (shouldRedirect && selectedPost) {
-      setShouldRedirect(false); // Reset to prevent redirect loop when coming back
-      const timer = setTimeout(() => {
-        window.location.href = selectedPost.link;
-      }, 200); // Faster redirect (0.2s)
-      return () => clearTimeout(timer);
-    }
-  }, [shouldRedirect, selectedPost]);
 
   const handleBack = () => {
     setPage('home');
