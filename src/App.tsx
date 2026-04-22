@@ -73,26 +73,34 @@ export default function App() {
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [downloadStep, setDownloadStep] = useState(0);
+  const [shouldRedirect, setShouldRedirect] = useState(false);
 
   const showToast = useCallback((msg: string) => {
     setToastMessage(msg);
   }, []);
 
   const handlePostClick = (post: Post) => {
-    // 1. Set the state locally first so UI is ready
+    // 1. First, navigate into the post detail view
     setSelectedPost(post);
     setPage('detail');
     setDownloadStep(0);
-    
-    // 2. Update the hash so the browser has a history entry for this post
     window.location.hash = `post=${post.id}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // 3. Use a very small timeout to ensure the history/hash is committed 
-    // before the page navigates away.
-    setTimeout(() => {
-      window.location.href = post.link;
-    }, 100);
+    // 2. Set the flag to redirect now that we are "inside"
+    setShouldRedirect(true);
   };
+
+  // Automatic redirect effect
+  useEffect(() => {
+    if (shouldRedirect && selectedPost) {
+      setShouldRedirect(false); // Reset to prevent redirect loop when coming back
+      const timer = setTimeout(() => {
+        window.location.href = selectedPost.link;
+      }, 800); // 0.8s stay inside before redirecting
+      return () => clearTimeout(timer);
+    }
+  }, [shouldRedirect, selectedPost]);
 
   const handleBack = () => {
     setPage('home');
